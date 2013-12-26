@@ -4,7 +4,7 @@ module Remotipart
       content = with_output_buffer(&block)
       if remotipart_submitted?
         response.content_type = Mime::HTML
-        text_area_tag('remotipart_response', String.new(html_escape(content)), options)
+        text_area_tag('remotipart_response', html_escape(String.new(content)), options)
       else
         content
       end
